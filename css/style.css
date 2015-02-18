@@ -5,39 +5,105 @@ style.css
 /* Resets and Fonts
 ======================================================================= */
 /* This is where you would place your CSS reset or @font-face declarations (if applicable) */
+@font-face
+{
+	font-family:homestead1;
+	src: url(../fonts/Homestead-One.ttf);
+}
+@font-face
+{
+	font-family:homestead2;
+	src: url(../fonts/Homestead-Two.ttf);
+}
+@font-face
+{
+	font-family:homestead3;
+	src: url(../fonts/Homestead-Three.ttf);
+}
+@font-face
+{
+	font-family:canter;
+	src: url(../fonts/Canter.otf)
+}
 
 /* "Mobile" CSS
 ======================================================================= */
 /* This is normally where you'd start putting your site's styles for layout, sizing, etc. The styles here are things we will try not to repeat in our media queries. Ex: font colors, font families, etc. Think of this section as having a media query equivalent to @media screen and (min-width: 0px). */
+.row1,.row2,.row3
+{
+	width:100%;
+	position:fixed;
+}
 
-body{ font-size: 16px; font-family: Helvetica, Arial, sans-serif; } /* This is the font size with which em units are based off of */
+.row1
+{
+	top:67%;
+	height:33%;
+	background:#03030e;
+}
 
-h1 { font-size: 2em; }
+.row2
+{
+	top:33%;
+	height:34%;
+	background:#191926;
+	z-index:1;
+}
 
-p{ font-size: 1em; color: #222; }
+.row3
+{
+	height:34%;
+	background:#10101e;	
+	z-index:2;
+}
 
-article{ margin-bottom: 1em; }
 
-img{ max-width: 100%; }
+.name
+{
+	font-size:60px;
+	text-align:center;
+}
 
-#container{ padding: 1em; }
+.details
+{
+	font-size:30px;
+	text-align:center;
+}
 
-.circle {
+.about
+{
+	font-size:30px;
+	text-align:center;
+	text-decoration:underline;
+}
+
+.circle
+{
     width: 40%;
     height:0;
     padding-bottom: 40%;
     -moz-border-radius: 50%; 
     -webkit-border-radius: 50%; 
     border-radius: 50%;
-    background: #4679BD; 
+    background-image: url(../images/front.jpg); 
+	background-size:cover;
 	top: 50%;
     left: 50%;
     display: block;
     position: absolute;
 	margin-top: -20%; /* HALF OF THE HEIGHT */
     margin-left: -20%; /* HALF OF THE WIDTH */
+	z-index:-1;
+	border: 10px solid white;
+	display:none;
 }
 
+body
+{
+	margin:0px;
+	color:white;
+	font-family:canter;
+}
 
 /* "Tablet" CSS
 ======================================================================= */
@@ -46,8 +112,6 @@ img{ max-width: 100%; }
 @media screen and (min-width: 600px){
     body{ font-size: 18px; } /* upping the font-size all around (as long as you're using em units!) */
 
-    #container{ max-width: 900px; margin: 0 3em; }
-	
 	.circle{width:30%;padding-bottom:30%;margin-top: -15%;margin-left: -15%;}
 
 }
@@ -59,12 +123,6 @@ img{ max-width: 100%; }
 
 @media screen and (min-width: 900px){
 
-    #container{ margin: 0 auto; }       
-
-    section, aside{ float: left; }
-    section{ width: 66.666666667%; margin-right: 3.333333333%; } /* target/context = result */
-    aside{ width: 30%; }
-	
 	.circle{width:20%;padding-bottom:20%;margin-top: -10%;margin-left: -10%;}
 
 }
